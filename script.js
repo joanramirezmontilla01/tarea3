@@ -1,7 +1,7 @@
 
 function clearForm() {
     const nameInput = document.getElementById('name');
-    const provinceInput = document.getElementById('province');
+    const provinceInput1 = document.getElementById('province');
     const cityInput = document.getElementById('city');
     const sectorInput = document.getElementById('sector');
     const streetInput = document.getElementById('street');
