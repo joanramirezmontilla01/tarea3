@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject selection</title>
+    <link href="styleIns.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar bg fixed-top" id="nak">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="datos.html">Registration System</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Selection</li>
+                </ol>
+            </nav>
+        </div>
+    </nav>
+      <main class="container">
+        <div class="row m-3">
+            <div class="card">
+                <div class="card-header"> <!-- bg-primary esta como que medio feo-->
+                    <h3>Subject selection</h3>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="accordionExample">                
+                    </div>
+                    <button class="btn btn-success boton-first" onclick="Confir()">Acept</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const formData = JSON.parse(sessionStorage.getItem("formData"));
+
+    if (formData) {
+        const career = formData.career;
+
+        switch (career) {
+            case "software":
+                Software();
+                break;
+
+            case "multimedia":
+                Multimedia();
+                break;
+
+            case "ciencia":
+                Ciencia();
+                break;
+
+            case "seguridad":
+                Seguridad();
+                break;
+
+            case "videojuegos":
+                Videojuegos();
+                break;
+
+            default:
+                break;
+        }
+    }
+});
+
+let SoftwareT = false;
+
+function Software(){
+if (!SoftwareT) {
+    let acor = document.getElementById("accordionExample")
+
+// Primer item del acordeón
+let acorItem = document.createElement("div");
+                acorItem.setAttribute("class", "accordion-item");
+
+                let h21 = document.createElement("h2");
+                h21.setAttribute("class", "accordion-header");
+                h21.setAttribute("id", "headingOne");
+
+                let button1 = document.createElement("button");
+                button1.setAttribute("class", "accordion-button");
+                button1.setAttribute("type", "button");
+                button1.setAttribute("data-bs-toggle", "collapse");
+                button1.setAttribute("data-bs-target", "#collapseOne");
+                button1.setAttribute("aria-expanded", "true");
+                button1.setAttribute("aria-controls", "collapseOne");
+                button1.textContent = "Introduction to the development of algorithms";
+
+                let div1 = document.createElement("div");
+                div1.setAttribute("id", "collapseOne");
+                div1.setAttribute("class", "accordion-collapse collapse show");
+                div1.setAttribute("aria-labelledby", "headingOne");
+                div1.setAttribute("data-bs-parent", "#accordionExample");
+
+                let acorbody = document.createElement("div");
+                acorbody.setAttribute("class", "accordion-body");
+
+                let label1 = document.createElement("label");
+                let input1 = document.createElement("input");
+                input1.setAttribute("id", "algoritmos-lun-8-12");
+                input1.setAttribute("type", "radio");
+                input1.setAttribute("name", "algoritmos");
+                input1.setAttribute("value", "Introduction to the development of algorithms");
+                input1.setAttribute("data-subject-id", "materia1");
+                input1.setAttribute("data-day-id", "lunes1");
+                label1.textContent = "Lun 8:00 12:00";
+
+                let label2 = document.createElement("label");
+                let input2 = document.createElement("input");
+                input2.setAttribute("id", "algoritmos-lun-14-18");
+                input2.setAttribute("type", "radio");
+                input2.setAttribute("name", "algoritmos");
+                input2.setAttribute("value", "Introduction to the development of algorithms");
+                input2.setAttribute("data-subject-id", "materia1");
+                input2.setAttribute("data-day-id", "lunes2");
+                label2.textContent = "Lun 14:00 18:00";
+
+                let label3 = document.createElement("label");
+                let input3 = document.createElement("input");
+                input3.setAttribute("id", "algoritmos-lun-18-20");
+                input3.setAttribute("type", "radio");
+                input3.setAttribute("name", "algoritmos");
+                input3.setAttribute("value", "Introduction to the development of algorithms");
+                input3.setAttribute("data-subject-id", "materia1");
+                input3.setAttribute("data-day-id", "lunes3");
+                label3.textContent = "Lun 18:00 20:00";
+
+                // Segundo item del acordeón
+                let acorItem2 = document.createElement("div");
+                acorItem2.setAttribute("class", "accordion-item");
+
+                let h22 = document.createElement("h2");
+                h22.setAttribute("class", "accordion-header");
+                h22.setAttribute("id", "headingTwo");
+
+                let button2 = document.createElement("button");
+                button2.setAttribute("class", "accordion-button collapsed");
+                button2.setAttribute("type", "button");
+                button2.setAttribute("data-bs-toggle", "collapse");
+                button2.setAttribute("data-bs-target", "#collapseTwo");
+                button2.setAttribute("aria-expanded", "false");
+                button2.setAttribute("aria-controls", "collapseTwo");
+                button2.textContent = "Programming Fundamentals";
+
+                let div2 = document.createElement("div");
+                div2.setAttribute("id", "collapseTwo");
+                div2.setAttribute("class", "accordion-collapse collapse");
+                div2.setAttribute("aria-labelledby", "headingTwo");
+                div2.setAttribute("data-bs-parent", "#accordionExample");
+
+                let acorbody2 = document.createElement("div");
+                acorbody2.setAttribute("class", "accordion-body");
+
+                let label4 = document.createElement("label");
+                let input4 = document.createElement("input");
+                input4.setAttribute("id", "fundamentos-mar-8-12");
+                input4.setAttribute("type", "radio");
+                input4.setAttribute("name", "fundamentos");
+                input4.setAttribute("value", "Programming Fundamentals");
+                input4.setAttribute("data-subject-id", "materia2");
+                input4.setAttribute("data-day-id", "martes1");
+                label4.textContent = "Mar 8:00 12:00";
+
+                let label5 = document.createElement("label");
+                let input5 = document.createElement("input");
+                input5.setAttribute("id", "fundamentos-mar-14-18");
+                input5.setAttribute("type", "radio");
+                input5.setAttribute("name", "fundamentos");
+                input5.setAttribute("value", "Programming Fundamentals");
+                input5.setAttribute("data-subject-id", "materia2");
+                input5.setAttribute("data-day-id", "martes2");
+                label5.textContent = "Mar 14:00 18:00";
+
+                let label6 = document.createElement("label");
+                let input6 = document.createElement("input");
+                input6.setAttribute("id", "fundamentos-mar-18-20");
+                input6.setAttribute("type", "radio");
+                input6.setAttribute("name", "fundamentos");
+                input6.setAttribute("value", "Programming Fundamentals");
+                input6.setAttribute("data-subject-id", "materia2");
+                input6.setAttribute("data-day-id", "martes3");
+                label6.textContent = "Mar 18:00 20:00";
+
+                // Tercer item del acordeón
+                let acorItem3 = document.createElement("div");
+                acorItem3.setAttribute("class", "accordion-item");
+
+                let h23 = document.createElement("h2");
+                h23.setAttribute("class", "accordion-header");
+                h23.setAttribute("id", "headingThree");
+
+                let button3 = document.createElement("button");
+                button3.setAttribute("class", "accordion-button collapsed");
+                button3.setAttribute("type", "button");
+                button3.setAttribute("data-bs-toggle", "collapse");
+                button3.setAttribute("data-bs-target", "#collapseThree");
+                button3.setAttribute("aria-expanded", "false");
+                button3.setAttribute("aria-controls", "collapseThree");
+                button3.textContent = "Programming 1";
+
+                let div3 = document.createElement("div");
+                div3.setAttribute("id", "collapseThree");
+                div3.setAttribute("class", "accordion-collapse collapse");
+                div3.setAttribute("aria-labelledby", "headingThree");
+                div3.setAttribute("data-bs-parent", "#accordionExample");
+
+                let acorbody3 = document.createElement("div");
+                acorbody3.setAttribute("class", "accordion-body");
+
+                let label7 = document.createElement("label");
+                let input7 = document.createElement("input");
+                input7.setAttribute("id", "p1-mier-8-12");
+                input7.setAttribute("type", "radio");
+                input7.setAttribute("name", "p-1");
+                input7.setAttribute("value", "Programming 1");
+                input7.setAttribute("data-subject-id", "materia3");
+                input7.setAttribute("data-day-id", "miercoles1");
+                label7.textContent = "Mier 8:00 12:00";
+
+                let label8 = document.createElement("label");
+                let input8 = document.createElement("input");
+                input8.setAttribute("id", "p1-mier-14-18");
+                input8.setAttribute("type", "radio");
+                input8.setAttribute("name", "p-1");
+                input8.setAttribute("value", "Programming 1");
+                input8.setAttribute("data-subject-id", "materia3");
+                input8.setAttribute("data-day-id", "miercoles2");
+                label8.textContent = "Mier 14:00 18:00";
+
+                let label9 = document.createElement("label");
+                let input9 = document.createElement("input");
+                input9.setAttribute("id", "p1-mier-18-20");
+                input9.setAttribute("type", "radio");
+                input9.setAttribute("name", "p-1");
+                input9.setAttribute("value", "Programming 1");
+                input9.setAttribute("data-subject-id", "materia3");
+                input9.setAttribute("data-day-id", "miercoles3");
+                label9.textContent = "Mier 18:00 20:00";
+
+                // Cuarto item del acordeón
+                let acorItem4 = document.createElement("div");
+                acorItem4.setAttribute("class", "accordion-item");
+
+                let h24 = document.createElement("h2");
+                h24.setAttribute("class", "accordion-header");
+                h24.setAttribute("id", "headingFour");
+
+                let button4 = document.createElement("button");
+                button4.setAttribute("class", "accordion-button collapsed");
+                button4.setAttribute("type", "button");
+                button4.setAttribute("data-bs-toggle", "collapse");
+                button4.setAttribute("data-bs-target", "#collapseFour");
+                button4.setAttribute("aria-expanded", "false");
+                button4.setAttribute("aria-controls", "collapseFour");
+                button4.textContent = "Programming 2";
+
+                let div4 = document.createElement("div");
+                div4.setAttribute("id", "collapseFour");
+                div4.setAttribute("class", "accordion-collapse collapse");
+                div4.setAttribute("aria-labelledby", "headingFour");
+                div4.setAttribute("data-bs-parent", "#accordionExample");
+
+                let acorbody4 = document.createElement("div");
+                acorbody4.setAttribute("class", "accordion-body");
+
+                let label10 = document.createElement("label");
+                let input10 = document.createElement("input");
+                input10.setAttribute("id", "p2-jue-8-12");
+                input10.setAttribute("type", "radio");
+                input10.setAttribute("name", "p-2");
+                input10.setAttribute("value", "Programming 2");
+                input10.setAttribute("data-subject-id", "materia4");
+                input10.setAttribute("data-day-id", "jueves1");
+                label10.textContent = "Jue 8:00 12:00";
+
+                let label11 = document.createElement("label");
+                let input11 = document.createElement("input");
+                input11.setAttribute("id", "p2-jue-14-18");
+                input11.setAttribute("type", "radio");
+                input11.setAttribute("name", "p-2");
+                input11.setAttribute("value", "Programming 2");
+                input11.setAttribute("data-subject-id", "materia4");
+                input11.setAttribute("data-day-id", "jueves2");
+                label11.textContent = "Jue 14:00 18:00";
+
+                let label12 = document.createElement("label");
+                let input12 = document.createElement("input");
+                input12.setAttribute("id", "p2-jue-18-20");
+                input12.setAttribute("type", "radio");
+                input12.setAttribute("name", "p-2");
+                input12.setAttribute("value", "Programming 2");
+                input12.setAttribute("data-subject-id", "materia4");
+                input12.setAttribute("data-day-id", "jueves3");
+                label12.textContent = "Jue 18:00 20:00";
+
+                // Quinto item del acordeón
+                let acorItem5 = document.createElement("div");
+                acorItem5.setAttribute("class", "accordion-item");
+
+                let h25 = document.createElement("h2");
+                h25.setAttribute("class", "accordion-header");
+                h25.setAttribute("id", "headingFive");
+
+                let button5 = document.createElement("button");
+                button5.setAttribute("class", "accordion-button collapsed");
+                button5.setAttribute("type", "button");
+                button5.setAttribute("data-bs-toggle", "collapse");
+                button5.setAttribute("data-bs-target", "#collapseFive");
+                button5.setAttribute("aria-expanded", "false");
+                button5.setAttribute("aria-controls", "collapseFive");
+                button5.textContent = "Web programming";
+
+                let div5 = document.createElement("div");
+                div5.setAttribute("id", "collapseFive");
+                div5.setAttribute("class", "accordion-collapse collapse");
+                div5.setAttribute("aria-labelledby", "headingFive");
+                div5.setAttribute("data-bs-parent", "#accordionExample");
+
+                let acorbody5 = document.createElement("div");
+                acorbody5.setAttribute("class", "accordion-body");
+
+                let label13 = document.createElement("label");
+                let input13 = document.createElement("input");
+                input13.setAttribute("id", "web-vie-8-12");
+                input13.setAttribute("type", "radio");
+                input13.setAttribute("name", "web");
+                input13.setAttribute("value", "Web programming");
+                input13.setAttribute("data-subject-id", "materia5");
+                input13.setAttribute("data-day-id", "viernes1");
+                label13.textContent = "Vie 8:00 12:00";
+
+                let label14 = document.createElement("label");
+                let input14 = document.createElement("input");
+                input14.setAttribute("id", "web-vie-14-18");
+                input14.setAttribute("type", "radio");
+                input14.setAttribute("name", "web");
+                input14.setAttribute("value", "Web programming");
+                input14.setAttribute("data-subject-id", "materia5");
+                input14.setAttribute("data-day-id", "viernes2");
+                label14.textContent = "Vie 14:00 18:00";
+
+                let label15 = document.createElement("label");
+                let input15 = document.createElement("input");
+                input15.setAttribute("id", "web-vie-18-20");
+                input15.setAttribute("type", "radio");
+                input15.setAttribute("name", "web");
+                input15.setAttribute("value", "Web programming");
+                input15.setAttribute("data-subject-id", "materia5");
+                input15.setAttribute("data-day-id", "viernes3");
+                label15.textContent = "Vie 18:00 20:00";
+
+//declaraciones
+//primero
+label1.appendChild(input1);
+label2.appendChild(input2);
+label3.appendChild(input3);
+//segundo
+label4.appendChild(input4);
+label5.appendChild(input5);
+label6.appendChild(input6);
+//tercero
+label7.appendChild(input7);
+label8.appendChild(input8);
+label9.appendChild(input9);
+//cuarto
+label10.appendChild(input10);
+label11.appendChild(input11);
+label12.appendChild(input12);
+//quinto
+label13.appendChild(input13);
+label14.appendChild(input14);
+label15.appendChild(input15);
+//primero
+acorbody.appendChild(label1);
+acorbody.appendChild(label2);
+acorbody.appendChild(label3);
+//segundo
+acorbody2.appendChild(label4);
+acorbody2.appendChild(label5);
+acorbody2.appendChild(label6);
+//tercero
+acorbody3.appendChild(label7);
+acorbody3.appendChild(label8);
+acorbody3.appendChild(label9);
+//cuarto
+acorbody4.appendChild(label10);
+acorbody4.appendChild(label11);
+acorbody4.appendChild(label12);
+//quinto
+acorbody5.appendChild(label13);
+acorbody5.appendChild(label14);
+acorbody5.appendChild(label15);
+//primero
+div1.appendChild(acorbody);
+//segundo
+div2.appendChild(acorbody2);
+//tercero
+div3.appendChild(acorbody3);
+//cuarto
+div4.appendChild(acorbody4);
+//quinto
+div5.appendChild(acorbody5);
+//primero
+h21.appendChild(button1);
+//segundo
+h22.appendChild(button2);
+//tercero
+h23.appendChild(button3);
+//cuarto
+h24.appendChild(button4);
+//quinto
+h25.appendChild(button5);
+//primero
+acorItem.appendChild(h21);
+acorItem.appendChild(div1);
+//segundo
+acorItem2.appendChild(h22);
+acorItem2.appendChild(div2);
+//tercero
+acorItem3.appendChild(h23);
+acorItem3.appendChild(div3);
+//cuarto
+acorItem4.appendChild(h24);
+acorItem4.appendChild(div4);
+//quinto
+acorItem5.appendChild(h25);
+acorItem5.appendChild(div5);
+//primero
+acor.appendChild(acorItem);
+//segundo
+acor.appendChild(acorItem2);
+//tercero
+acor.appendChild(acorItem3);
+//cuarto
+acor.appendChild(acorItem4);
+//quinto
+acor.appendChild(acorItem5);
+SoftwareT = true;
+}
+}
+
+
+let MultimediaT = false;
+
+function Multimedia(){
+if (!MultimediaT) {
+    let acor = document.getElementById("accordionExample")
+
+//primer item del acordeon
+let acorItem = document.createElement("div");
+acorItem.setAttribute("class", "accordion-item");
+
+let h21 = document.createElement("h2");
+h21.setAttribute("class", "accordion-header");
+h21.setAttribute("id", "headingOne");
+
+let button1 = document.createElement("button");
+button1.setAttribute("class", "accordion-button");
+button1.setAttribute("type", "button");
+button1.setAttribute("data-bs-toggle", "collapse");
+button1.setAttribute("data-bs-target", "#collapseOne");
+button1.setAttribute("aria-expanded", "true");
+button1.setAttribute("aria-controls", "acollapseOne");
+button1.textContent = "Introduction to Multimedia";
+
+let div1 = document.createElement("div");
+div1.setAttribute("id","collapseOne");
+div1.setAttribute("class","accordion-collapse collapse show");
+div1.setAttribute("aria-labelledby","headingOne");
+div1.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody = document.createElement("div");
+acorbody.setAttribute("class", "accordion-body");
+
+let label1 = document.createElement("label");
+let input1 = document.createElement("input");
+input1.setAttribute("id","morning");
+input1.setAttribute("type","radio");
+input1.setAttribute("name","algoritmos");
+input1.setAttribute("value","Introduction to Multimedia");
+input1.setAttribute("data-subject-id", "materia1");
+input1.setAttribute("data-day-id", "lunes1");
+label1.textContent = "Lun 8:00 12:00";
+
+let label2 = document.createElement("label");
+let input2 = document.createElement("input");
+input2.setAttribute("id","afternoon");
+input2.setAttribute("type","radio");
+input2.setAttribute("name","algoritmos");
+input2.setAttribute("value","Introduction to Multimedia");
+input2.setAttribute("data-subject-id", "materia1");
+input2.setAttribute("data-day-id", "lunes2");
+label2.textContent = "Lun 14:00:00 18:00";
+
+let label3 = document.createElement("label");
+let input3 = document.createElement("input");
+input3.setAttribute("id","night");
+input3.setAttribute("type","radio");
+input3.setAttribute("name","algoritmos");
+input3.setAttribute("value","Introduction to Multimedia");
+label3.textContent = "Lun 18:00 20:00";
+
+
+//segundo item del acordeon
+let acorItem2 = document.createElement("div");
+acorItem2.setAttribute("class", "accordion-item");
+
+let h22 = document.createElement("h2");
+h22.setAttribute("class", "accordion-header");
+h22.setAttribute("id", "headingTwo");
+
+let button2 = document.createElement("button");
+button2.setAttribute("class", "accordion-button collapsed");
+button2.setAttribute("type", "button");
+button2.setAttribute("data-bs-toggle", "collapse");
+button2.setAttribute("data-bs-target", "#collapseTwo");
+button2.setAttribute("aria-expanded", "false");
+button2.setAttribute("aria-controls", "collapseTwo");
+button2.textContent = "Introduction to Visual Communication";
+
+let div2 = document.createElement("div");
+div2.setAttribute("id","collapseTwo");
+div2.setAttribute("class","accordion-collapse collapse");
+div2.setAttribute("aria-labelledby","headingTwo");
+div2.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody2 = document.createElement("div");
+acorbody2.setAttribute("class", "accordion-body");
+
+let label4 = document.createElement("label");
+let input4 = document.createElement("input");
+input4.setAttribute("id","morning-2");
+input4.setAttribute("type","radio");
+input4.setAttribute("name","fundamentos");
+input4.setAttribute("value","Introduction to Visual Communication");
+input4.setAttribute("data-subject-id", "materia2");
+input4.setAttribute("data-day-id", "martes1");
+label4.textContent = "Mar 8:00 12:00";
+
+let label5 = document.createElement("label");
+let input5 = document.createElement("input");
+input5.setAttribute("id","afternoon-2");
+input5.setAttribute("type","radio");
+input5.setAttribute("name","fundamentos");
+input5.setAttribute("value","Introduction to Visual Communication");
+input5.setAttribute("data-subject-id", "materia2");
+input5.setAttribute("data-day-id", "martes2");
+label5.textContent = "Mar 14:00:00 18:00";
+
+let label6 = document.createElement("label");
+let input6 = document.createElement("input");
+input6.setAttribute("id","night-2");
+input6.setAttribute("type","radio");
+input6.setAttribute("name","fundamentos");
+input6.setAttribute("value","Introduction to Visual Communication");
+input6.setAttribute("data-subject-id", "materia2");
+input6.setAttribute("data-day-id", "martes3");
+label6.textContent = "Mar 18:00 20:00";
+
+//tercer item del acordeon
+let acorItem3 = document.createElement("div");
+acorItem3.setAttribute("class", "accordion-item");
+
+let h23 = document.createElement("h2");
+h23.setAttribute("class", "accordion-header");
+h23.setAttribute("id", "headingThree");
+
+let button3 = document.createElement("button");
+button3.setAttribute("class", "accordion-button collapsed");
+button3.setAttribute("type", "button");
+button3.setAttribute("data-bs-toggle", "collapse");
+button3.setAttribute("data-bs-target", "#collapseThree");
+button3.setAttribute("aria-expanded", "false");
+button3.setAttribute("aria-controls", "collapseThree");
+button3.textContent = "Bitmap Graphics";
+
+let div3 = document.createElement("div");
+div3.setAttribute("id","collapseThree");
+div3.setAttribute("class","accordion-collapse collapse");
+div3.setAttribute("aria-labelledby","headingThree");
+div3.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody3 = document.createElement("div");
+acorbody3.setAttribute("class", "accordion-body");
+
+let label7 = document.createElement("label");
+let input7 = document.createElement("input");
+input7.setAttribute("id","morning-3");
+input7.setAttribute("type","radio");
+input7.setAttribute("name","p-1");
+input7.setAttribute("value","Bitmap Graphics");
+input7.setAttribute("data-subject-id", "materia3");
+input7.setAttribute("data-day-id", "miercoles1");
+label7.textContent = "Mier 8:00 12:00";
+
+let label8 = document.createElement("label");
+let input8 = document.createElement("input");
+input8.setAttribute("id","afternoon-3");
+input8.setAttribute("type","radio");
+input8.setAttribute("name","p-1");
+input8.setAttribute("value","Bitmap Graphics");
+input8.setAttribute("data-subject-id", "materia3");
+input8.setAttribute("data-day-id", "miercoles2");
+label8.textContent = "Mier 14:00:00 18:00";
+
+let label9 = document.createElement("label");
+let input9 = document.createElement("input");
+input9.setAttribute("id","night-3");
+input9.setAttribute("type","radio");
+input9.setAttribute("name","p-1");
+input9.setAttribute("value","Bitmap Graphics");
+input9.setAttribute("data-subject-id", "materia3");
+input9.setAttribute("data-day-id", "miercoles3");
+label9.textContent = "Mier 18:00 20:00";
+
+//quinto item del acordeon
+let acorItem5 = document.createElement("div");
+acorItem5.setAttribute("class", "accordion-item");
+
+let h25 = document.createElement("h2");
+h25.setAttribute("class", "accordion-header");
+h25.setAttribute("id", "headingFive");
+
+let button5 = document.createElement("button");
+button5.setAttribute("class", "accordion-button collapsed");
+button5.setAttribute("type", "button");
+button5.setAttribute("data-bs-toggle", "collapse");
+button5.setAttribute("data-bs-target", "#collapseFive");
+button5.setAttribute("aria-expanded", "false");
+button5.setAttribute("aria-controls", "collapseFive");
+button5.textContent = "Vector Graphics";
+
+let div5 = document.createElement("div");
+div5.setAttribute("id","collapseFive");
+div5.setAttribute("class","accordion-collapse collapse");
+div5.setAttribute("aria-labelledby","headingFive");
+div5.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody5 = document.createElement("div");
+acorbody5.setAttribute("class", "accordion-body");
+
+let label13 = document.createElement("label");
+let input13 = document.createElement("input");
+input13.setAttribute("id","morning-5");
+input13.setAttribute("type","radio");
+input13.setAttribute("name","web");
+input13.setAttribute("value","Vector Graphics");
+input13.setAttribute("data-subject-id", "materia5");
+input13.setAttribute("data-day-id", "viernes1");
+label13.textContent = "Vie 8:00 12:00";
+
+let label14 = document.createElement("label");
+let input14 = document.createElement("input");
+input14.setAttribute("id","afternoon-3");
+input14.setAttribute("type","radio");
+input14.setAttribute("name","web");
+input14.setAttribute("value","Vector Graphics");
+input14.setAttribute("data-subject-id", "materia5");
+input14.setAttribute("data-day-id", "viernes2");
+label14.textContent = "Vie 14:00:00 18:00";
+
+let label15 = document.createElement("label");
+let input15 = document.createElement("input");
+input15.setAttribute("id","night-5");
+input15.setAttribute("type","radio");
+input15.setAttribute("name","web");
+input15.setAttribute("value","Vector Graphics");
+input15.setAttribute("data-subject-id", "materia5");
+input15.setAttribute("data-day-id", "viernes3");
+label15.textContent = "Vie 18:00 20:00";
+
+//cuarto item del acordeon
+let acorItem4 = document.createElement("div");
+acorItem4.setAttribute("class", "accordion-item");
+
+let h24 = document.createElement("h2");
+h24.setAttribute("class", "accordion-header");
+h24.setAttribute("id", "headingFour");
+
+let button4 = document.createElement("button");
+button4.setAttribute("class", "accordion-button collapsed");
+button4.setAttribute("type", "button");
+button4.setAttribute("data-bs-toggle", "collapse");
+button4.setAttribute("data-bs-target", "#collapseFour");
+button4.setAttribute("aria-expanded", "false");
+button4.setAttribute("aria-controls", "collapseFour");
+button4.textContent = "Advanced Visual Communication";
+
+let div4 = document.createElement("div");
+div4.setAttribute("id","collapseFour");
+div4.setAttribute("class","accordion-collapse collapse");
+div4.setAttribute("aria-labelledby","headingFour");
+div4.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody4 = document.createElement("div");
+acorbody4.setAttribute("class", "accordion-body");
+
+let label10 = document.createElement("label");
+let input10 = document.createElement("input");
+input10.setAttribute("id","morning-4");
+input10.setAttribute("type","radio");
+input10.setAttribute("name","p-2");
+input10.setAttribute("value","Advanced Visual Communication");
+input10.setAttribute("data-subject-id", "materia4");
+input10.setAttribute("data-day-id", "jueves1");
+label10.textContent = "Jue 8:00 12:00";
+
+let label11 = document.createElement("label");
+let input11 = document.createElement("input");
+input11.setAttribute("id","afternoon-4");
+input11.setAttribute("type","radio");
+input11.setAttribute("name","p-2");
+input11.setAttribute("value","Advanced Visual Communication");
+input11.setAttribute("data-subject-id", "materia4");
+input11.setAttribute("data-day-id", "jueves2");
+label11.textContent = "Jue 14:00:00 18:00";
+
+let label12 = document.createElement("label");
+let input12 = document.createElement("input");
+input12.setAttribute("id","night-4");
+input12.setAttribute("type","radio");
+input12.setAttribute("name","p-2");
+input12.setAttribute("value","Advanced Visual Communication");
+input12.setAttribute("data-subject-id", "materia4");
+input12.setAttribute("data-day-id", "jueves3");
+label12.textContent = "Jue 18:00 20:00";
+
+//declaraciones
+//primero
+label1.appendChild(input1);
+label2.appendChild(input2);
+label3.appendChild(input3);
+//segundo
+label4.appendChild(input4);
+label5.appendChild(input5);
+label6.appendChild(input6);
+//tercero
+label7.appendChild(input7);
+label8.appendChild(input8);
+label9.appendChild(input9);
+//cuarto
+label10.appendChild(input10);
+label11.appendChild(input11);
+label12.appendChild(input12);
+//quinto
+label13.appendChild(input13);
+label14.appendChild(input14);
+label15.appendChild(input15);
+//primero
+acorbody.appendChild(label1);
+acorbody.appendChild(label2);
+acorbody.appendChild(label3);
+//segundo
+acorbody2.appendChild(label4);
+acorbody2.appendChild(label5);
+acorbody2.appendChild(label6);
+//tercero
+acorbody3.appendChild(label7);
+acorbody3.appendChild(label8);
+acorbody3.appendChild(label9);
+//cuarto
+acorbody4.appendChild(label10);
+acorbody4.appendChild(label11);
+acorbody4.appendChild(label12);
+//quinto
+acorbody5.appendChild(label13);
+acorbody5.appendChild(label14);
+acorbody5.appendChild(label15);
+//primero
+div1.appendChild(acorbody);
+//segundo
+div2.appendChild(acorbody2);
+//tercero
+div3.appendChild(acorbody3);
+//cuarto
+div4.appendChild(acorbody4);
+//quinto
+div5.appendChild(acorbody5);
+//primero
+h21.appendChild(button1);
+//segundo
+h22.appendChild(button2);
+//tercero
+h23.appendChild(button3);
+//cuarto
+h24.appendChild(button4);
+//quinto
+h25.appendChild(button5);
+//primero
+acorItem.appendChild(h21);
+acorItem.appendChild(div1);
+//segundo
+acorItem2.appendChild(h22);
+acorItem2.appendChild(div2);
+//tercero
+acorItem3.appendChild(h23);
+acorItem3.appendChild(div3);
+//cuarto
+acorItem4.appendChild(h24);
+acorItem4.appendChild(div4);
+//quinto
+acorItem5.appendChild(h25);
+acorItem5.appendChild(div5);
+//primero
+acor.appendChild(acorItem);
+//segundo
+acor.appendChild(acorItem2);
+//tercero
+acor.appendChild(acorItem3);
+//cuarto
+acor.appendChild(acorItem4);
+//quinto
+acor.appendChild(acorItem5);
+MultimediaT = true;
+}
+}
+
+let SeguridadT = false;
+
+function Seguridad(){
+if (!SeguridadT) {
+    let acor = document.getElementById("accordionExample")
+
+//primer item del acordeon
+let acorItem = document.createElement("div");
+acorItem.setAttribute("class", "accordion-item");
+
+let h21 = document.createElement("h2");
+h21.setAttribute("class", "accordion-header");
+h21.setAttribute("id", "headingOne");
+
+let button1 = document.createElement("button");
+button1.setAttribute("class", "accordion-button");
+button1.setAttribute("type", "button");
+button1.setAttribute("data-bs-toggle", "collapse");
+button1.setAttribute("data-bs-target", "#collapseOne");
+button1.setAttribute("aria-expanded", "true");
+button1.setAttribute("aria-controls", "acollapseOne");
+button1.textContent = "Introduction to Cybersecurity";
+
+let div1 = document.createElement("div");
+div1.setAttribute("id","collapseOne");
+div1.setAttribute("class","accordion-collapse collapse show");
+div1.setAttribute("aria-labelledby","headingOne");
+div1.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody = document.createElement("div");
+acorbody.setAttribute("class", "accordion-body");
+
+let label1 = document.createElement("label");
+let input1 = document.createElement("input");
+input1.setAttribute("id","morning");
+input1.setAttribute("type","radio");
+input1.setAttribute("name","algoritmos");
+input1.setAttribute("value","Introduction to Cybersecurity");
+input1.setAttribute("data-subject-id", "materia1");
+input1.setAttribute("data-day-id", "lunes1");
+label1.textContent = "Lun 8:00 12:00";
+
+let label2 = document.createElement("label");
+let input2 = document.createElement("input");
+input2.setAttribute("id","afternoon");
+input2.setAttribute("type","radio");
+input2.setAttribute("name","algoritmos");
+input2.setAttribute("value","Introduction to Cybersecurity");
+input2.setAttribute("data-subject-id", "materia1");
+input2.setAttribute("data-day-id", "lunes2");
+label2.textContent = "Lun 14:00:00 18:00";
+
+let label3 = document.createElement("label");
+let input3 = document.createElement("input");
+input3.setAttribute("id","night");
+input3.setAttribute("type","radio");
+input3.setAttribute("name","algoritmos");
+input3.setAttribute("value","Introduction to Cybersecurity");
+input3.setAttribute("data-subject-id", "materia1");
+input3.setAttribute("data-day-id", "lunes3");
+label3.textContent = "Lun 18:00 20:00";
+
+
+//segundo item del acordeon
+let acorItem2 = document.createElement("div");
+acorItem2.setAttribute("class", "accordion-item");
+
+let h22 = document.createElement("h2");
+h22.setAttribute("class", "accordion-header");
+h22.setAttribute("id", "headingTwo");
+
+let button2 = document.createElement("button");
+button2.setAttribute("class", "accordion-button collapsed");
+button2.setAttribute("type", "button");
+button2.setAttribute("data-bs-toggle", "collapse");
+button2.setAttribute("data-bs-target", "#collapseTwo");
+button2.setAttribute("aria-expanded", "false");
+button2.setAttribute("aria-controls", "collapseTwo");
+button2.textContent = "Operating systems";
+
+let div2 = document.createElement("div");
+div2.setAttribute("id","collapseTwo");
+div2.setAttribute("class","accordion-collapse collapse");
+div2.setAttribute("aria-labelledby","headingTwo");
+div2.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody2 = document.createElement("div");
+acorbody2.setAttribute("class", "accordion-body");
+
+let label4 = document.createElement("label");
+let input4 = document.createElement("input");
+input4.setAttribute("id","morning-2");
+input4.setAttribute("type","radio");
+input4.setAttribute("name","fundamentos");
+input4.setAttribute("value","Operating systems");
+input4.setAttribute("data-subject-id", "materia2");
+input4.setAttribute("data-day-id", "martes1");
+label4.textContent = "Mar 8:00 12:00";
+
+let label5 = document.createElement("label");
+let input5 = document.createElement("input");
+input5.setAttribute("id","afternoon-2");
+input5.setAttribute("type","radio");
+input5.setAttribute("name","fundamentos");
+input5.setAttribute("value","Operating systems");
+input5.setAttribute("data-subject-id", "materia2");
+input5.setAttribute("data-day-id", "martes2");
+label5.textContent = "Mar 14:00:00 18:00";
+
+let label6 = document.createElement("label");
+let input6 = document.createElement("input");
+input6.setAttribute("id","night-2");
+input6.setAttribute("type","radio");
+input6.setAttribute("name","fundamentos");
+input6.setAttribute("value","Operating systems");
+input6.setAttribute("data-subject-id", "materia2");
+input6.setAttribute("data-day-id", "martes3");
+label6.textContent = "Mar 18:00 20:00";
+
+//tercer item del acordeon
+let acorItem3 = document.createElement("div");
+acorItem3.setAttribute("class", "accordion-item");
+
+let h23 = document.createElement("h2");
+h23.setAttribute("class", "accordion-header");
+h23.setAttribute("id", "headingThree");
+
+let button3 = document.createElement("button");
+button3.setAttribute("class", "accordion-button collapsed");
+button3.setAttribute("type", "button");
+button3.setAttribute("data-bs-toggle", "collapse");
+button3.setAttribute("data-bs-target", "#collapseThree");
+button3.setAttribute("aria-expanded", "false");
+button3.setAttribute("aria-controls", "collapseThree");
+button3.textContent = "Networking Fundamentals";
+
+let div3 = document.createElement("div");
+div3.setAttribute("id","collapseThree");
+div3.setAttribute("class","accordion-collapse collapse");
+div3.setAttribute("aria-labelledby","headingThree");
+div3.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody3 = document.createElement("div");
+acorbody3.setAttribute("class", "accordion-body");
+
+let label7 = document.createElement("label");
+let input7 = document.createElement("input");
+input7.setAttribute("id","morning-3");
+input7.setAttribute("type","radio");
+input7.setAttribute("name","p-1");
+input7.setAttribute("value","Networking Fundamentals");
+input7.setAttribute("data-subject-id", "materia3");
+input7.setAttribute("data-day-id", "miercoles1");
+label7.textContent = "Mier 8:00 12:00";
+
+let label8 = document.createElement("label");
+let input8 = document.createElement("input");
+input8.setAttribute("id","afternoon-3");
+input8.setAttribute("type","radio");
+input8.setAttribute("name","p-1");
+input8.setAttribute("value","Networking Fundamentals");
+input8.setAttribute("data-subject-id", "materia3");
+input8.setAttribute("data-day-id", "miercoles2");
+label8.textContent = "Mier 14:00:00 18:00";
+
+let label9 = document.createElement("label");
+let input9 = document.createElement("input");
+input9.setAttribute("id","night-3");
+input9.setAttribute("type","radio");
+input9.setAttribute("name","p-1");
+input9.setAttribute("value","Networking Fundamentals");
+input9.setAttribute("data-subject-id", "materia3");
+input9.setAttribute("data-day-id", "miercoles3");
+label9.textContent = "Mier 18:00 20:00";
+
+//quinto item del acordeon
+let acorItem5 = document.createElement("div");
+acorItem5.setAttribute("class", "accordion-item");
+
+let h25 = document.createElement("h2");
+h25.setAttribute("class", "accordion-header");
+h25.setAttribute("id", "headingFive");
+
+let button5 = document.createElement("button");
+button5.setAttribute("class", "accordion-button collapsed");
+button5.setAttribute("type", "button");
+button5.setAttribute("data-bs-toggle", "collapse");
+button5.setAttribute("data-bs-target", "#collapseFive");
+button5.setAttribute("aria-expanded", "false");
+button5.setAttribute("aria-controls", "collapseFive");
+button5.textContent = "Operating System II";
+
+let div5 = document.createElement("div");
+div5.setAttribute("id","collapseFive");
+div5.setAttribute("class","accordion-collapse collapse");
+div5.setAttribute("aria-labelledby","headingFive");
+div5.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody5 = document.createElement("div");
+acorbody5.setAttribute("class", "accordion-body");
+
+let label13 = document.createElement("label");
+let input13 = document.createElement("input");
+input13.setAttribute("id","morning-5");
+input13.setAttribute("type","radio");
+input13.setAttribute("name","web");
+input13.setAttribute("value","Operating System II");
+input13.setAttribute("data-subject-id", "materia5");
+input13.setAttribute("data-day-id", "viernes1");
+label13.textContent = "Vie 8:00 12:00";
+
+let label14 = document.createElement("label");
+let input14 = document.createElement("input");
+input14.setAttribute("id","afternoon-3");
+input14.setAttribute("type","radio");
+input14.setAttribute("name","web");
+input14.setAttribute("value","Operating System II");
+input14.setAttribute("data-subject-id", "materia5");
+input14.setAttribute("data-day-id", "viernes2");
+label14.textContent = "Vie 14:00:00 18:00";
+
+let label15 = document.createElement("label");
+let input15 = document.createElement("input");
+input15.setAttribute("id","night-5");
+input15.setAttribute("type","radio");
+input15.setAttribute("name","web");
+input15.setAttribute("value","Operating System II");
+input15.setAttribute("data-subject-id", "materia5");
+input15.setAttribute("data-day-id", "viernes3");
+label15.textContent = "Vie 18:00 20:00";
+
+//cuarto item del acordeon
+let acorItem4 = document.createElement("div");
+acorItem4.setAttribute("class", "accordion-item");
+
+let h24 = document.createElement("h2");
+h24.setAttribute("class", "accordion-header");
+h24.setAttribute("id", "headingFour");
+
+let button4 = document.createElement("button");
+button4.setAttribute("class", "accordion-button collapsed");
+button4.setAttribute("type", "button");
+button4.setAttribute("data-bs-toggle", "collapse");
+button4.setAttribute("data-bs-target", "#collapseFour");
+button4.setAttribute("aria-expanded", "false");
+button4.setAttribute("aria-controls", "collapseFour");
+button4.textContent = "Operating System III";
+
+let div4 = document.createElement("div");
+div4.setAttribute("id","collapseFour");
+div4.setAttribute("class","accordion-collapse collapse");
+div4.setAttribute("aria-labelledby","headingFour");
+div4.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody4 = document.createElement("div");
+acorbody4.setAttribute("class", "accordion-body");
+
+let label10 = document.createElement("label");
+let input10 = document.createElement("input");
+input10.setAttribute("id","morning-4");
+input10.setAttribute("type","radio");
+input10.setAttribute("name","p-2");
+input10.setAttribute("value","Operating System III");
+input10.setAttribute("data-subject-id", "materia4");
+input10.setAttribute("data-day-id", "jueves1");
+label10.textContent = "Jue 8:00 12:00";
+
+let label11 = document.createElement("label");
+let input11 = document.createElement("input");
+input11.setAttribute("id","afternoon-4");
+input11.setAttribute("type","radio");
+input11.setAttribute("name","p-2");
+input11.setAttribute("value","Operating System III");
+input11.setAttribute("data-subject-id", "materia4");
+input11.setAttribute("data-day-id", "jueves2");
+label11.textContent = "Jue 14:00:00 18:00";
+
+let label12 = document.createElement("label");
+let input12 = document.createElement("input");
+input12.setAttribute("id","night-4");
+input12.setAttribute("type","radio");
+input12.setAttribute("name","p-2");
+input12.setAttribute("value","Operating System III");
+input12.setAttribute("data-subject-id", "materia4");
+input12.setAttribute("data-day-id", "jueves3");
+label12.textContent = "Jue 18:00 20:00";
+
+//declaraciones
+//primero
+label1.appendChild(input1);
+label2.appendChild(input2);
+label3.appendChild(input3);
+//segundo
+label4.appendChild(input4);
+label5.appendChild(input5);
+label6.appendChild(input6);
+//tercero
+label7.appendChild(input7);
+label8.appendChild(input8);
+label9.appendChild(input9);
+//cuarto
+label10.appendChild(input10);
+label11.appendChild(input11);
+label12.appendChild(input12);
+//quinto
+label13.appendChild(input13);
+label14.appendChild(input14);
+label15.appendChild(input15);
+//primero
+acorbody.appendChild(label1);
+acorbody.appendChild(label2);
+acorbody.appendChild(label3);
+//segundo
+acorbody2.appendChild(label4);
+acorbody2.appendChild(label5);
+acorbody2.appendChild(label6);
+//tercero
+acorbody3.appendChild(label7);
+acorbody3.appendChild(label8);
+acorbody3.appendChild(label9);
+//cuarto
+acorbody4.appendChild(label10);
+acorbody4.appendChild(label11);
+acorbody4.appendChild(label12);
+//quinto
+acorbody5.appendChild(label13);
+acorbody5.appendChild(label14);
+acorbody5.appendChild(label15);
+//primero
+div1.appendChild(acorbody);
+//segundo
+div2.appendChild(acorbody2);
+//tercero
+div3.appendChild(acorbody3);
+//cuarto
+div4.appendChild(acorbody4);
+//quinto
+div5.appendChild(acorbody5);
+//primero
+h21.appendChild(button1);
+//segundo
+h22.appendChild(button2);
+//tercero
+h23.appendChild(button3);
+//cuarto
+h24.appendChild(button4);
+//quinto
+h25.appendChild(button5);
+//primero
+acorItem.appendChild(h21);
+acorItem.appendChild(div1);
+//segundo
+acorItem2.appendChild(h22);
+acorItem2.appendChild(div2);
+//tercero
+acorItem3.appendChild(h23);
+acorItem3.appendChild(div3);
+//cuarto
+acorItem4.appendChild(h24);
+acorItem4.appendChild(div4);
+//quinto
+acorItem5.appendChild(h25);
+acorItem5.appendChild(div5);
+//primero
+acor.appendChild(acorItem);
+//segundo
+acor.appendChild(acorItem2);
+//tercero
+acor.appendChild(acorItem3);
+//cuarto
+acor.appendChild(acorItem4);
+//quinto
+acor.appendChild(acorItem5);
+SeguridadT = true;
+}
+}
+
+let CienciaT = false;
+
+function Ciencia(){
+if (!CienciaT) {
+    let acor = document.getElementById("accordionExample")
+
+//primer item del acordeon
+let acorItem = document.createElement("div");
+acorItem.setAttribute("class", "accordion-item");
+
+let h21 = document.createElement("h2");
+h21.setAttribute("class", "accordion-header");
+h21.setAttribute("id", "headingOne");
+
+let button1 = document.createElement("button");
+button1.setAttribute("class", "accordion-button");
+button1.setAttribute("type", "button");
+button1.setAttribute("data-bs-toggle", "collapse");
+button1.setAttribute("data-bs-target", "#collapseOne");
+button1.setAttribute("aria-expanded", "true");
+button1.setAttribute("aria-controls", "acollapseOne");
+button1.textContent = "Introduction to Data Science";
+
+let div1 = document.createElement("div");
+div1.setAttribute("id","collapseOne");
+div1.setAttribute("class","accordion-collapse collapse show");
+div1.setAttribute("aria-labelledby","headingOne");
+div1.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody = document.createElement("div");
+acorbody.setAttribute("class", "accordion-body");
+
+let label1 = document.createElement("label");
+let input1 = document.createElement("input");
+input1.setAttribute("id","morning");
+input1.setAttribute("type","radio");
+input1.setAttribute("name","algoritmos");
+input1.setAttribute("value","Introduction to Data Science");
+input1.setAttribute("data-subject-id", "materia1");
+input1.setAttribute("data-day-id", "lunes1");
+label1.textContent = "Lun 8:00 12:00";
+
+let label2 = document.createElement("label");
+let input2 = document.createElement("input");
+input2.setAttribute("id","afternoon");
+input2.setAttribute("type","radio");
+input2.setAttribute("name","algoritmos");
+input2.setAttribute("value","Introduction to Data Science");
+input2.setAttribute("data-subject-id", "materia1");
+input2.setAttribute("data-day-id", "lunes2");
+label2.textContent = "Lun 14:00:00 18:00";
+
+let label3 = document.createElement("label");
+let input3 = document.createElement("input");
+input3.setAttribute("id","night");
+input3.setAttribute("type","radio");
+input3.setAttribute("name","algoritmos");
+input3.setAttribute("value","Introduction to Data Science");
+input3.setAttribute("data-subject-id", "materia1");
+input3.setAttribute("data-day-id", "lunes3");
+label3.textContent = "Lun 18:00 20:00";
+
+
+//segundo item del acordeon
+let acorItem2 = document.createElement("div");
+acorItem2.setAttribute("class", "accordion-item");
+
+let h22 = document.createElement("h2");
+h22.setAttribute("class", "accordion-header");
+h22.setAttribute("id", "headingTwo");
+
+let button2 = document.createElement("button");
+button2.setAttribute("class", "accordion-button collapsed");
+button2.setAttribute("type", "button");
+button2.setAttribute("data-bs-toggle", "collapse");
+button2.setAttribute("data-bs-target", "#collapseTwo");
+button2.setAttribute("aria-expanded", "false");
+button2.setAttribute("aria-controls", "collapseTwo");
+button2.textContent = "Introduction to data analytics";
+
+let div2 = document.createElement("div");
+div2.setAttribute("id","collapseTwo");
+div2.setAttribute("class","accordion-collapse collapse");
+div2.setAttribute("aria-labelledby","headingTwo");
+div2.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody2 = document.createElement("div");
+acorbody2.setAttribute("class", "accordion-body");
+
+let label4 = document.createElement("label");
+let input4 = document.createElement("input");
+input4.setAttribute("id","morning-2");
+input4.setAttribute("type","radio");
+input4.setAttribute("name","fundamentos");
+input4.setAttribute("value","Introduction to data analytics");
+input4.setAttribute("data-subject-id", "materia2");
+input4.setAttribute("data-day-id", "martes1");
+label4.textContent = "Mar 8:00 12:00";
+
+let label5 = document.createElement("label");
+let input5 = document.createElement("input");
+input5.setAttribute("id","afternoon-2");
+input5.setAttribute("type","radio");
+input5.setAttribute("name","fundamentos");
+input5.setAttribute("value","Introduction to data analytics");
+input5.setAttribute("data-subject-id", "materia2");
+input5.setAttribute("data-day-id", "martes2");
+label5.textContent = "Mar 14:00:00 18:00";
+
+let label6 = document.createElement("label");
+let input6 = document.createElement("input");
+input6.setAttribute("id","night-2");
+input6.setAttribute("type","radio");
+input6.setAttribute("name","fundamentos");
+input6.setAttribute("value","Introduction to data analytics");
+input6.setAttribute("data-subject-id", "materia2");
+input6.setAttribute("data-day-id", "martes3");
+label6.textContent = "Mar 18:00 20:00";
+
+//tercer item del acordeon
+let acorItem3 = document.createElement("div");
+acorItem3.setAttribute("class", "accordion-item");
+
+let h23 = document.createElement("h2");
+h23.setAttribute("class", "accordion-header");
+h23.setAttribute("id", "headingThree");
+
+let button3 = document.createElement("button");
+button3.setAttribute("class", "accordion-button collapsed");
+button3.setAttribute("type", "button");
+button3.setAttribute("data-bs-toggle", "collapse");
+button3.setAttribute("data-bs-target", "#collapseThree");
+button3.setAttribute("aria-expanded", "false");
+button3.setAttribute("aria-controls", "collapseThree");
+button3.textContent = "Programming 1";
+
+let div3 = document.createElement("div");
+div3.setAttribute("id","collapseThree");
+div3.setAttribute("class","accordion-collapse collapse");
+div3.setAttribute("aria-labelledby","headingThree");
+div3.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody3 = document.createElement("div");
+acorbody3.setAttribute("class", "accordion-body");
+
+let label7 = document.createElement("label");
+let input7 = document.createElement("input");
+input7.setAttribute("id","morning-3");
+input7.setAttribute("type","radio");
+input7.setAttribute("name","p-1");
+input7.setAttribute("value","Programming 1");
+input7.setAttribute("data-subject-id", "materia3");
+input7.setAttribute("data-day-id", "miercoles1");
+label7.textContent = "Mier 8:00 12:00";
+
+let label8 = document.createElement("label");
+let input8 = document.createElement("input");
+input8.setAttribute("id","afternoon-3");
+input8.setAttribute("type","radio");
+input8.setAttribute("name","p-1");
+input8.setAttribute("value","Programming 1");
+input8.setAttribute("data-subject-id", "materia3");
+input8.setAttribute("data-day-id", "miercoles2");
+label8.textContent = "Mier 14:00:00 18:00";
+
+let label9 = document.createElement("label");
+let input9 = document.createElement("input");
+input9.setAttribute("id","night-3");
+input9.setAttribute("type","radio");
+input9.setAttribute("name","p-1");
+input9.setAttribute("value","Programming 1");
+input9.setAttribute("data-subject-id", "materia3");
+input9.setAttribute("data-day-id", "miercoles3");
+label9.textContent = "Mier 18:00 20:00";
+
+//quinto item del acordeon
+let acorItem5 = document.createElement("div");
+acorItem5.setAttribute("class", "accordion-item");
+
+let h25 = document.createElement("h2");
+h25.setAttribute("class", "accordion-header");
+h25.setAttribute("id", "headingFive");
+
+let button5 = document.createElement("button");
+button5.setAttribute("class", "accordion-button collapsed");
+button5.setAttribute("type", "button");
+button5.setAttribute("data-bs-toggle", "collapse");
+button5.setAttribute("data-bs-target", "#collapseFive");
+button5.setAttribute("aria-expanded", "false");
+button5.setAttribute("aria-controls", "collapseFive");
+button5.textContent = "Programming 2";
+
+let div5 = document.createElement("div");
+div5.setAttribute("id","collapseFive");
+div5.setAttribute("class","accordion-collapse collapse");
+div5.setAttribute("aria-labelledby","headingFive");
+div5.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody5 = document.createElement("div");
+acorbody5.setAttribute("class", "accordion-body");
+
+let label13 = document.createElement("label");
+let input13 = document.createElement("input");
+input13.setAttribute("id","morning-5");
+input13.setAttribute("type","radio");
+input13.setAttribute("name","web");
+input13.setAttribute("value","Programming 2");
+input13.setAttribute("data-subject-id", "materia5");
+input13.setAttribute("data-day-id", "viernes1");
+label13.textContent = "Vie 8:00 12:00";
+
+let label14 = document.createElement("label");
+let input14 = document.createElement("input");
+input14.setAttribute("id","afternoon-3");
+input14.setAttribute("type","radio");
+input14.setAttribute("name","web");
+input14.setAttribute("value","Programming 2");
+input14.setAttribute("data-subject-id", "materia5");
+input14.setAttribute("data-day-id", "viernes2");
+label14.textContent = "Vie 14:00:00 18:00";
+
+let label15 = document.createElement("label");
+let input15 = document.createElement("input");
+input15.setAttribute("id","night-5");
+input15.setAttribute("type","radio");
+input15.setAttribute("name","web");
+input15.setAttribute("value","Programming 2");
+input15.setAttribute("data-subject-id", "materia5");
+input15.setAttribute("data-day-id", "viernes3");
+label15.textContent = "Vie 18:00 20:00";
+
+//cuarto item del acordeon
+let acorItem4 = document.createElement("div");
+acorItem4.setAttribute("class", "accordion-item");
+
+let h24 = document.createElement("h2");
+h24.setAttribute("class", "accordion-header");
+h24.setAttribute("id", "headingFour");
+
+let button4 = document.createElement("button");
+button4.setAttribute("class", "accordion-button collapsed");
+button4.setAttribute("type", "button");
+button4.setAttribute("data-bs-toggle", "collapse");
+button4.setAttribute("data-bs-target", "#collapseFour");
+button4.setAttribute("aria-expanded", "false");
+button4.setAttribute("aria-controls", "collapseFour");
+button4.textContent = "Programming 3";
+
+let div4 = document.createElement("div");
+div4.setAttribute("id","collapseFour");
+div4.setAttribute("class","accordion-collapse collapse");
+div4.setAttribute("aria-labelledby","headingFour");
+div4.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody4 = document.createElement("div");
+acorbody4.setAttribute("class", "accordion-body");
+
+let label10 = document.createElement("label");
+let input10 = document.createElement("input");
+input10.setAttribute("id","morning-4");
+input10.setAttribute("type","radio");
+input10.setAttribute("name","p-2");
+input10.setAttribute("value","Programming 3");
+input10.setAttribute("data-subject-id", "materia4");
+input10.setAttribute("data-day-id", "jueves1");
+label10.textContent = "Jue 8:00 12:00";
+
+let label11 = document.createElement("label");
+let input11 = document.createElement("input");
+input11.setAttribute("id","afternoon-4");
+input11.setAttribute("type","radio");
+input11.setAttribute("name","p-2");
+input11.setAttribute("value","Programming 3");
+input11.setAttribute("data-subject-id", "materia4");
+input11.setAttribute("data-day-id", "jueves2");
+label11.textContent = "Jue 14:00:00 18:00";
+
+let label12 = document.createElement("label");
+let input12 = document.createElement("input");
+input12.setAttribute("id","night-4");
+input12.setAttribute("type","radio");
+input12.setAttribute("name","p-2");
+input12.setAttribute("value","Programming 3");
+input12.setAttribute("data-subject-id", "materia4");
+input12.setAttribute("data-day-id", "jueves3");
+label12.textContent = "Jue 18:00 20:00";
+
+//declaraciones
+//primero
+label1.appendChild(input1);
+label2.appendChild(input2);
+label3.appendChild(input3);
+//segundo
+label4.appendChild(input4);
+label5.appendChild(input5);
+label6.appendChild(input6);
+//tercero
+label7.appendChild(input7);
+label8.appendChild(input8);
+label9.appendChild(input9);
+//cuarto
+label10.appendChild(input10);
+label11.appendChild(input11);
+label12.appendChild(input12);
+//quinto
+label13.appendChild(input13);
+label14.appendChild(input14);
+label15.appendChild(input15);
+//primero
+acorbody.appendChild(label1);
+acorbody.appendChild(label2);
+acorbody.appendChild(label3);
+//segundo
+acorbody2.appendChild(label4);
+acorbody2.appendChild(label5);
+acorbody2.appendChild(label6);
+//tercero
+acorbody3.appendChild(label7);
+acorbody3.appendChild(label8);
+acorbody3.appendChild(label9);
+//cuarto
+acorbody4.appendChild(label10);
+acorbody4.appendChild(label11);
+acorbody4.appendChild(label12);
+//quinto
+acorbody5.appendChild(label13);
+acorbody5.appendChild(label14);
+acorbody5.appendChild(label15);
+//primero
+div1.appendChild(acorbody);
+//segundo
+div2.appendChild(acorbody2);
+//tercero
+div3.appendChild(acorbody3);
+//cuarto
+div4.appendChild(acorbody4);
+//quinto
+div5.appendChild(acorbody5);
+//primero
+h21.appendChild(button1);
+//segundo
+h22.appendChild(button2);
+//tercero
+h23.appendChild(button3);
+//cuarto
+h24.appendChild(button4);
+//quinto
+h25.appendChild(button5);
+//primero
+acorItem.appendChild(h21);
+acorItem.appendChild(div1);
+//segundo
+acorItem2.appendChild(h22);
+acorItem2.appendChild(div2);
+//tercero
+acorItem3.appendChild(h23);
+acorItem3.appendChild(div3);
+//cuarto
+acorItem4.appendChild(h24);
+acorItem4.appendChild(div4);
+//quinto
+acorItem5.appendChild(h25);
+acorItem5.appendChild(div5);
+//primero
+acor.appendChild(acorItem);
+//segundo
+acor.appendChild(acorItem2);
+//tercero
+acor.appendChild(acorItem3);
+//cuarto
+acor.appendChild(acorItem4);
+//quinto
+acor.appendChild(acorItem5);
+CienciaT = true;
+}
+}
+
+let VideojuegosT = false;
+
+function Videojuegos(){
+if (!VideojuegosT) {
+    let acor = document.getElementById("accordionExample")
+
+//primer item del acordeon
+let acorItem = document.createElement("div");
+acorItem.setAttribute("class", "accordion-item");
+
+let h21 = document.createElement("h2");
+h21.setAttribute("class", "accordion-header");
+h21.setAttribute("id", "headingOne");
+
+let button1 = document.createElement("button");
+button1.setAttribute("class", "accordion-button");
+button1.setAttribute("type", "button");
+button1.setAttribute("data-bs-toggle", "collapse");
+button1.setAttribute("data-bs-target", "#collapseOne");
+button1.setAttribute("aria-expanded", "true");
+button1.setAttribute("aria-controls", "acollapseOne");
+button1.textContent = "Interface Design of user";
+
+let div1 = document.createElement("div");
+div1.setAttribute("id","collapseOne");
+div1.setAttribute("class","accordion-collapse collapse show");
+div1.setAttribute("aria-labelledby","headingOne");
+div1.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody = document.createElement("div");
+acorbody.setAttribute("class", "accordion-body");
+
+let label1 = document.createElement("label");
+let input1 = document.createElement("input");
+input1.setAttribute("id","morning");
+input1.setAttribute("type","radio");
+input1.setAttribute("name","algoritmos");
+input1.setAttribute("value","Interface Design of user");
+input1.setAttribute("data-subject-id", "materia1");
+input1.setAttribute("data-day-id", "lunes1");
+label1.textContent = "Lun 8:00 12:00";
+
+let label2 = document.createElement("label");
+let input2 = document.createElement("input");
+input2.setAttribute("id","afternoon");
+input2.setAttribute("type","radio");
+input2.setAttribute("name","algoritmos");
+input2.setAttribute("value","Interface Design of user");
+input2.setAttribute("data-subject-id", "materia1");
+input2.setAttribute("data-day-id", "lunes2");
+label2.textContent = "Lun 14:00:00 18:00";
+
+let label3 = document.createElement("label");
+let input3 = document.createElement("input");
+input3.setAttribute("id","night");
+input3.setAttribute("type","radio");
+input3.setAttribute("name","algoritmos");
+input3.setAttribute("value","Interface Design of user");
+input3.setAttribute("data-subject-id", "materia1");
+input3.setAttribute("data-day-id", "lunes3");
+label3.textContent = "Lun 18:00 20:00";
+
+
+//segundo item del acordeon
+let acorItem2 = document.createElement("div");
+acorItem2.setAttribute("class", "accordion-item");
+
+let h22 = document.createElement("h2");
+h22.setAttribute("class", "accordion-header");
+h22.setAttribute("id", "headingTwo");
+
+let button2 = document.createElement("button");
+button2.setAttribute("class", "accordion-button collapsed");
+button2.setAttribute("type", "button");
+button2.setAttribute("data-bs-toggle", "collapse");
+button2.setAttribute("data-bs-target", "#collapseTwo");
+button2.setAttribute("aria-expanded", "false");
+button2.setAttribute("aria-controls", "collapseTwo");
+button2.textContent = "Sprite Design and 2D Graphics";
+
+let div2 = document.createElement("div");
+div2.setAttribute("id","collapseTwo");
+div2.setAttribute("class","accordion-collapse collapse");
+div2.setAttribute("aria-labelledby","headingTwo");
+div2.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody2 = document.createElement("div");
+acorbody2.setAttribute("class", "accordion-body");
+
+let label4 = document.createElement("label");
+let input4 = document.createElement("input");
+input4.setAttribute("id","morning-2");
+input4.setAttribute("type","radio");
+input4.setAttribute("name","fundamentos");
+input4.setAttribute("value","Sprite Design and 2D Graphics");
+input4.setAttribute("data-subject-id", "materia2");
+input4.setAttribute("data-day-id", "martes1");
+label4.textContent = "Mar 8:00 12:00";
+
+let label5 = document.createElement("label");
+let input5 = document.createElement("input");
+input5.setAttribute("id","afternoon-2");
+input5.setAttribute("type","radio");
+input5.setAttribute("name","fundamentos");
+input5.setAttribute("value","Sprite Design and 2D Graphics");
+input5.setAttribute("data-subject-id", "materia2");
+input5.setAttribute("data-day-id", "martes2");
+label5.textContent = "Mar 14:00:00 18:00";
+
+let label6 = document.createElement("label");
+let input6 = document.createElement("input");
+input6.setAttribute("id","night-2");
+input6.setAttribute("type","radio");
+input6.setAttribute("name","fundamentos");
+input6.setAttribute("value","Sprite Design and 2D Graphics");
+input6.setAttribute("data-subject-id", "materia2");
+input6.setAttribute("data-day-id", "martes3");
+label6.textContent = "Mar 18:00 20:00";
+
+//tercer item del acordeon
+let acorItem3 = document.createElement("div");
+acorItem3.setAttribute("class", "accordion-item");
+
+let h23 = document.createElement("h2");
+h23.setAttribute("class", "accordion-header");
+h23.setAttribute("id", "headingThree");
+
+let button3 = document.createElement("button");
+button3.setAttribute("class", "accordion-button collapsed");
+button3.setAttribute("type", "button");
+button3.setAttribute("data-bs-toggle", "collapse");
+button3.setAttribute("data-bs-target", "#collapseThree");
+button3.setAttribute("aria-expanded", "false");
+button3.setAttribute("aria-controls", "collapseThree");
+button3.textContent = "Design study video games";
+
+let div3 = document.createElement("div");
+div3.setAttribute("id","collapseThree");
+div3.setAttribute("class","accordion-collapse collapse");
+div3.setAttribute("aria-labelledby","headingThree");
+div3.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody3 = document.createElement("div");
+acorbody3.setAttribute("class", "accordion-body");
+
+let label7 = document.createElement("label");
+let input7 = document.createElement("input");
+input7.setAttribute("id","morning-3");
+input7.setAttribute("type","radio");
+input7.setAttribute("name","p-1");
+input7.setAttribute("value","Design study video games");
+input7.setAttribute("data-subject-id", "materia3");
+input7.setAttribute("data-day-id", "miercoles1");
+label7.textContent = "Mier 8:00 12:00";
+
+let label8 = document.createElement("label");
+let input8 = document.createElement("input");
+input8.setAttribute("id","afternoon-3");
+input8.setAttribute("type","radio");
+input8.setAttribute("name","p-1");
+input8.setAttribute("value","Design study video games");
+input8.setAttribute("data-subject-id", "materia3");
+input8.setAttribute("data-day-id", "miercoles2");
+label8.textContent = "Mier 14:00:00 18:00";
+
+let label9 = document.createElement("label");
+let input9 = document.createElement("input");
+input9.setAttribute("id","night-3");
+input9.setAttribute("type","radio");
+input9.setAttribute("name","p-1");
+input9.setAttribute("value","Design study video games");
+input9.setAttribute("data-subject-id", "materia3");
+input9.setAttribute("data-day-id", "miercoles3");
+label9.textContent = "Mier 18:00 20:00";
+
+//quinto item del acordeon
+let acorItem5 = document.createElement("div");
+acorItem5.setAttribute("class", "accordion-item");
+
+let h25 = document.createElement("h2");
+h25.setAttribute("class", "accordion-header");
+h25.setAttribute("id", "headingFive");
+
+let button5 = document.createElement("button");
+button5.setAttribute("class", "accordion-button collapsed");
+button5.setAttribute("type", "button");
+button5.setAttribute("data-bs-toggle", "collapse");
+button5.setAttribute("data-bs-target", "#collapseFive");
+button5.setAttribute("aria-expanded", "false");
+button5.setAttribute("aria-controls", "collapseFive");
+button5.textContent = "Level Design I - 3D";
+
+let div5 = document.createElement("div");
+div5.setAttribute("id","collapseFive");
+div5.setAttribute("class","accordion-collapse collapse");
+div5.setAttribute("aria-labelledby","headingFive");
+div5.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody5 = document.createElement("div");
+acorbody5.setAttribute("class", "accordion-body");
+
+let label13 = document.createElement("label");
+let input13 = document.createElement("input");
+input13.setAttribute("id","morning-5");
+input13.setAttribute("type","radio");
+input13.setAttribute("name","web");
+input13.setAttribute("value","Level Design I - 3D");
+input13.setAttribute("data-subject-id", "materia5");
+input13.setAttribute("data-day-id", "viernes1");
+label13.textContent = "Vie 8:00 12:00";
+
+let label14 = document.createElement("label");
+let input14 = document.createElement("input");
+input14.setAttribute("id","afternoon-3");
+input14.setAttribute("type","radio");
+input14.setAttribute("name","web");
+input14.setAttribute("value","Level Design I - 3D");
+input14.setAttribute("data-subject-id", "materia5");
+input14.setAttribute("data-day-id", "viernes2");
+label14.textContent = "Vie 14:00:00 18:00";
+
+let label15 = document.createElement("label");
+let input15 = document.createElement("input");
+input15.setAttribute("id","night-5");
+input15.setAttribute("type","radio");
+input15.setAttribute("name","web");
+input15.setAttribute("value","Level Design I - 3D");
+input15.setAttribute("data-subject-id", "materia5");
+input15.setAttribute("data-day-id", "viernes3");
+label15.textContent = "Vie 18:00 20:00";
+
+//cuarto item del acordeon
+let acorItem4 = document.createElement("div");
+acorItem4.setAttribute("class", "accordion-item");
+
+let h24 = document.createElement("h2");
+h24.setAttribute("class", "accordion-header");
+h24.setAttribute("id", "headingFour");
+
+let button4 = document.createElement("button");
+button4.setAttribute("class", "accordion-button collapsed");
+button4.setAttribute("type", "button");
+button4.setAttribute("data-bs-toggle", "collapse");
+button4.setAttribute("data-bs-target", "#collapseFour");
+button4.setAttribute("aria-expanded", "false");
+button4.setAttribute("aria-controls", "collapseFour");
+button4.textContent = "Level Design II - 2D";
+
+let div4 = document.createElement("div");
+div4.setAttribute("id","collapseFour");
+div4.setAttribute("class","accordion-collapse collapse");
+div4.setAttribute("aria-labelledby","headingFour");
+div4.setAttribute("data-bs-parent","#accordionExample");
+
+let acorbody4 = document.createElement("div");
+acorbody4.setAttribute("class", "accordion-body");
+
+let label10 = document.createElement("label");
+let input10 = document.createElement("input");
+input10.setAttribute("id","morning-4");
+input10.setAttribute("type","radio");
+input10.setAttribute("name","p-2");
+input10.setAttribute("value","Level Design II - 2D");
+input10.setAttribute("data-subject-id", "materia4");
+input10.setAttribute("data-day-id", "jueves1");
+label10.textContent = "Jue 8:00 12:00";
+
+let label11 = document.createElement("label");
+let input11 = document.createElement("input");
+input11.setAttribute("id","afternoon-4");
+input11.setAttribute("type","radio");
+input11.setAttribute("name","p-2");
+input11.setAttribute("value","Level Design II - 2D");
+input11.setAttribute("data-subject-id", "materia4");
+input11.setAttribute("data-day-id", "jueves2");
+label11.textContent = "Jue 14:00:00 18:00";
+
+let label12 = document.createElement("label");
+let input12 = document.createElement("input");
+input12.setAttribute("id","night-4");
+input12.setAttribute("type","radio");
+input12.setAttribute("name","p-2");
+input12.setAttribute("value","Level Design II - 2D");
+input12.setAttribute("data-subject-id", "materia4");
+input12.setAttribute("data-day-id", "jueves3");
+label12.textContent = "Jue 18:00 20:00";
+
+//declaraciones
+//primero
+label1.appendChild(input1);
+label2.appendChild(input2);
+label3.appendChild(input3);
+//segundo
+label4.appendChild(input4);
+label5.appendChild(input5);
+label6.appendChild(input6);
+//tercero
+label7.appendChild(input7);
+label8.appendChild(input8);
+label9.appendChild(input9);
+//cuarto
+label10.appendChild(input10);
+label11.appendChild(input11);
+label12.appendChild(input12);
+//quinto
+label13.appendChild(input13);
+label14.appendChild(input14);
+label15.appendChild(input15);
+//primero
+acorbody.appendChild(label1);
+acorbody.appendChild(label2);
+acorbody.appendChild(label3);
+//segundo
+acorbody2.appendChild(label4);
+acorbody2.appendChild(label5);
+acorbody2.appendChild(label6);
+//tercero
+acorbody3.appendChild(label7);
+acorbody3.appendChild(label8);
+acorbody3.appendChild(label9);
+//cuarto
+acorbody4.appendChild(label10);
+acorbody4.appendChild(label11);
+acorbody4.appendChild(label12);
+//quinto
+acorbody5.appendChild(label13);
+acorbody5.appendChild(label14);
+acorbody5.appendChild(label15);
+//primero
+div1.appendChild(acorbody);
+//segundo
+div2.appendChild(acorbody2);
+//tercero
+div3.appendChild(acorbody3);
+//cuarto
+div4.appendChild(acorbody4);
+//quinto
+div5.appendChild(acorbody5);
+//primero
+h21.appendChild(button1);
+//segundo
+h22.appendChild(button2);
+//tercero
+h23.appendChild(button3);
+//cuarto
+h24.appendChild(button4);
+//quinto
+h25.appendChild(button5);
+//primero
+acorItem.appendChild(h21);
+acorItem.appendChild(div1);
+//segundo
+acorItem2.appendChild(h22);
+acorItem2.appendChild(div2);
+//tercero
+acorItem3.appendChild(h23);
+acorItem3.appendChild(div3);
+//cuarto
+acorItem4.appendChild(h24);
+acorItem4.appendChild(div4);
+//quinto
+acorItem5.appendChild(h25);
+acorItem5.appendChild(div5);
+//primero
+acor.appendChild(acorItem);
+//segundo
+acor.appendChild(acorItem2);
+//tercero
+acor.appendChild(acorItem3);
+//cuarto
+acor.appendChild(acorItem4);
+//quinto
+acor.appendChild(acorItem5);
+VideojuegosT = true;
+}
+}
+
+
+    </script>
+</body>
+</html>

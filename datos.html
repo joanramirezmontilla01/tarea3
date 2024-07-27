@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration system</title>
+    <link href="styleIns.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <div class="row m-3">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Personal information</h3>
+                </div>
+                <div class="card-body" id="form">
+                    <label for="name" class="form-label">Name: </label>
+                    <input  type="text" class="form-control" id="name">
+        
+                    <label for="province" class="form-label">Province: </label>
+                    <input type="text" class="form-control" id="province">
+        
+                    <label for="city" class="form-label">City: </label>
+                    <input type="text" class="form-control" id="city">
+        
+                    <label for="sector" class="form-label">Sector: </label>
+                    <input type="text" class="form-control" id="sector">
+        
+                    <label for="street" class="form-label">Street: </label>
+                    <input type="text" class="form-control" id="street">
+        
+                    <label for="career" class="form-label">Career: </label>
+                    <select id="career" class="form-select">
+                    <option>Carrera</option>
+                    <option value="software">Software</option>
+                    <option value="multimedia">Multimedia</option>
+                    <option value="ciencia">Data Science</option>
+                    <option value="seguridad">Cybersecurity</option>
+                    <option value="videojuegos">Interactive simulations and video games</option>
+                    </select>
+
+                    <button class="btn btn-danger boton-first" onclick="clearForm()">Clean</button>
+                    <button class="btn btn-success boton-first" onclick="Save()">Save</button>
+                </div>
+            </div>
+        </div>
+    </main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const formData = JSON.parse(sessionStorage.getItem("formData"));
+
+    if (formData) {
+        document.getElementById("name").value = formData.name;
+        document.getElementById("province").value = formData.province;
+        document.getElementById("city").value = formData.city;
+        document.getElementById("sector").value = formData.sector;
+        document.getElementById("street").value = formData.street;
+        document.getElementById("career").value = formData.career;
+    }
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>
